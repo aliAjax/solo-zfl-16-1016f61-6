@@ -397,6 +397,163 @@ h3 {
   margin: 14px 0;
 }
 
+.cell.locked.used {
+  border-style: solid;
+  border-color: var(--red);
+  box-shadow: inset 0 0 0 2px rgba(164, 64, 55, 0.55);
+  cursor: not-allowed;
+}
+
+.lock-tag {
+  color: var(--red);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.job-item strong {
+  color: var(--red);
+}
+
+/* 弹窗 */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 32, 28, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 50;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: 0 30px 70px rgba(34, 32, 28, 0.3);
+  padding: 20px;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.modal-head h2 {
+  font-size: 20px;
+}
+
+.modal-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.modal-form {
+  display: grid;
+  gap: 12px;
+}
+
+.modal-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modal-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.7;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.summary-list,
+.plan-list,
+.plan-notes {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.plan-report {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.plan-report.good {
+  border-color: var(--green);
+  background: rgba(60, 112, 86, 0.08);
+}
+
+.plan-report.bad {
+  border-color: var(--red);
+  background: rgba(164, 64, 55, 0.08);
+}
+
+.plan-head {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.plan-list {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.plan-notes {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: #fffaf1;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 30px rgba(34, 32, 28, 0.28);
+  z-index: 60;
+  max-width: calc(100vw - 40px);
+  text-align: center;
+}
+
+.toast[hidden] {
+  display: none;
+}
+
 @media (max-width: 1120px) {
   .workspace {
     grid-template-columns: 1fr;
